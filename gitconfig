@@ -1,6 +1,7 @@
 [user]
-  email = sferik@gmail.com
-  name = Erik Berlin
+  email = justin.powers@salesforce.com
+  name = Justin Powers
+#  signingkey = EEB320B3
 [gist]
   browse = true
   private = true
@@ -24,21 +25,41 @@
 [alias]
   bl = blame -C
   co = checkout
+  cob = checkout -b
   df = diff --word-diff
   l1 = log --oneline --decorate
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-  st = status -bs
+  st = status
+  search = "log --all  --pretty=oneline -S"
+  lol = "log --no-merges --graph --decorate --pretty=oneline --abbrev-commit"
+  up = !git fetch origin && rebase origin/develop
+  ir = @git rebase -i origin/develop
+	context = log -U0 -S
+  amend = commit --amend --no-edit
 [core]
-  excludesfile = /Users/sferik/.gitignore_global
+  excludesfile = /Users/justin.powers/.gitignore_global
   quotepath = false
-  whitespace = trailing-space,space-before-tab
+  editor = subl -w #Sublime
+  # Comma separated list of common whitespace problems to notice
+	whitespace = space-before-tab,tabwidth=2,trailing-space
+[diff]
+  # Whether to detect renames. If set to "copies" or "copy", it will detect copies as well.
+  renames = copy
 [push]
-  default = tracking
+  # default = nothing
 [branch]
-  autosetuprebase = always
+	autosetuprebase = always
 [help]
   autocorrect = 1
 [diff]
   mnemonicprefix = true
-[vain]
-  default = eeee
+[rerere]
+  # Activate recording of resolved conflicts, so that identical conflict hunks can be resolved automatically
+	enabled = 1
+[rebase]
+  # Whether to show a diffstat of what changed upstream since the last rebase
+	stat = true
+[init]
+	# templatedir = ~/.git_template
+[commit]
+#	gpgsign = true
