@@ -1,5 +1,7 @@
-# Erik Michaels-Ober's Dotfiles
+# Justin Powers' Dotfiles
 These are the files I use to configure my shell just the way I like it.
+
+Dotfiles borrowed from sferik - https://github.com/sferik/dotfiles
 
 ## Design Principles
 With apologies to Stanley Kubrick:
